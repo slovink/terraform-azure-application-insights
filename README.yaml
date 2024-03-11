@@ -5,26 +5,26 @@
 #
 
 # Name of this project
-name : Terraform AZURE App Insights
+name : Terraform AZURE APPLICATION INSIGHTS
 
 # License of this project
-license: "APACHE"
+license: "MIT"
 
 # Canonical GitHub repo
-github_repo: git@github.com:slovink/terraform-azure-app-insights.git
+github_repo: git@github.com:slovink/terraform-azure-application-insights.git
 
 # Badges to display
 badges:
   - name: "Terraform"
-    image: "https://img.shields.io/badge/Terraform-v1.1.7-green"
+    image: "https://img.shields.io/badge/Terraform-v1.7.4-green"
     url: "https://www.terraform.io"
   - name: "Licence"
-    image: "https://img.shields.io/badge/License-APACHE-blue.svg"
-    url: "LICENSE.md"
+    image: "https://img.shields.io/badge/License-MIT-blue.svg"
+    url: "https://github.com/slovink/terraform-azure-application-insights/blob/master/LICENSE"
 
 #  description of this project
 description: |-
-  Terraform module to create Azure App Insights resource on AZURE.
+  Terraform module to create Azure application-insights service resource on AZURE.
 # extra content
 include:
   - "terraform.md"
@@ -33,29 +33,27 @@ include:
 # How to use this project
 usage: |-
   Here are some examples of how you can use this module in your inventory structure:
-  ### azure app insights
+  ### azure application-insights
   ```hcl
-    # Basic
-    module "app-insights" {
-    source                             = "../"
-    name                               = "app"
-    environment                        = "test"
-    resource_group_name                = module.resource_group.resource_group_name
-    location                           = module.resource_group.resource_group_location
-    #   workspace_id                   = module.log-analytics.workspace_id
-    application_type = "web"
 
-    ##web test
-    web_test_enable   = true
-    kind              = "ping"
-    frequency         = 300
-    timeout           = 60
-    list_of_test_urls = ["https://www.google.com", ]
-    web_test_name     = ["google", ]
+     # Basic
+    module "application-insights" {
+   source              = "../"
+   name                = "app1"
+   environment         = "test"
+   resource_group_name = module.resource_group.resource_group_name
+   location            = module.resource_group.resource_group_location
+   #   workspace_id     = module.log-analytics.workspace_id
 
-    #### enable diagnostic setting
-    log_analytics_workspace_id        = module.log-analytics.workspace_id
+   ##web test
+   web_test_enable   = true
+   kind              = "ping"
+   frequency         = 300
+   timeout           = 60
+   list_of_test_urls = ["https://www.google.com", ]
+   web_test_name     = ["google", ]
+
+   #### enable diagnostic setting
+   log_analytics_workspace_id = module.log-analytics.workspace_id
   }
-    ```
-
-
+  ```

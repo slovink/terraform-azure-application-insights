@@ -1,4 +1,22 @@
-# terraform-azure-application-insights
+<p align="center"> <img src="https://user-images.githubusercontent.com/50652676/62349836-882fef80-b51e-11e9-99e3-7b974309c7e3.png" width="100" height="100"></p>
+
+
+<h1 align="center">
+    Terraform Azure Application Insights
+</h1>
+
+<p align="center" style="font-size: 1.2rem;">
+    Terraform module to create Acr resource on Azure.
+     </p>
+
+<p align="center">
+
+<a href="https://www.terraform.io">
+  <img src="https://img.shields.io/badge/Terraform-v1.7.4-green" alt="Terraform">
+</a>
+<a href="https://github.com/slovink/terraform-azure-application-insights/blob/master/LICENSE">
+  <img src="https://img.shields.io/badge/License-APACHE-blue.svg" alt="Licence">
+</a>
 
 
 This Terraform configuration defines an Azure infrastructure using the Azure provider.
@@ -24,7 +42,7 @@ for creating AZURE resources, and you can customize the inputs as needed. Below 
 ```hcl
   # Basic
   module "app-insights" {
-  source                             = "../"
+  source                             = "https://github.com/slovink/terraform-azure-application-lnsights.git?ref=1.0.0"
   name                               = "app"
   environment                        = "test"
   resource_group_name                = module.resource_group.resource_group_name
@@ -56,7 +74,7 @@ The following input variables can be configured:
 - 'defender_id': The ID of the Advanced Threat Protection resource.
 
 # Examples
-For detailed examples on how to use this module, please refer to the '[example](https://github.com/slovink/terraform-azure-application-insights/blob/master/example)' directory within this repository.
+For detailed examples on how to use this module, please refer to the '[example](https://github.com/slovink/terraform-azure-application-insights/blob/master/_example)' directory within this repository.
 
 # License
 This Terraform module is provided under the '[License Name]' License. Please see the [LICENSE](https://github.com/slovink/terraform-azure-application-insights/blob/master/LICENSE) file for more details.
@@ -70,7 +88,7 @@ Replace '[License Name]' and '[Your Name]' with the appropriate license and your
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.6.6 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.7.4 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=3.87.0 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | >=3.6.0 |
 
